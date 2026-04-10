@@ -1,0 +1,146 @@
+:root { /* edit the root directly */ 
+    --text-color: #1a1c20; 
+    --link-color: #4a76ee;
+    --background-color: #eeeff1; 
+}
+
+/* now reset the default stylings by targeting every single element */ 
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* since we're using IDs to scroll to different sections, let's make sure our scroll is always set to smooth: this targets html */ 
+html { 
+    scroll-behavior: smooth; /* this ensures that when you click any link, the scroll is smooth rather than instantly teleporting you to that area */ 
+}
+
+/* we imported some fonts from Google Fonts; let's set that to our body tag */ 
+body { 
+    font-family: "Funnel Sans", "Fira Sans", sans-serif;
+    background-color: var(--background-color) /* we have to set a background color for our text. we set it to a variable (our original background color) */
+}
+
+/* changing our anchor tags (our links) */ 
+a { 
+    color: var(--link-color); /* our link colors will be set to the variable "link-color" that we defined before */
+    text-decoration: none; /* removes the underline from all links (decoration = for links) */ 
+}
+
+/* Editing the navigation bar */ 
+nav { 
+    /* we can use flexboxes to split them to the left & right parts of our screen */ 
+    display: flex; 
+    justify-content: space-between; /* sets the left part all the wya to the left. sets the right part all the way to the right */ 
+    padding: 0 50px; /* 0 = y-axis, 50 = x-axis */
+    align-items: center; 
+    /* so with the padding, there's some nice padding on the left and right, but everything sticks to the top. i don't want to just add y-axis padding because i want the elements to come down according to the height we set */ 
+    height: 80px; /* therefore we use the height tool to have everything come down according to height */ 
+    
+}
+
+/* editing the left navigation bar */
+nav .left a { 
+    color: var(--text-color); /* set the text color to a predefined variable */ 
+    font-size: 22px; 
+    font-weight: 600; 
+}
+
+nav .right a { 
+    /* font-size: 22px; */
+    color: var(--text-color);
+    /* font-weight: 600; */ 
+    margin: 0 10px; /* add spacing between the buttons */
+}
+
+/* so now since we want to edit the email button to be different (since rn they're all the same), use the nav right LAST CHILD */ 
+nav .right a:last-child { /* invert the colors: text color becomes background color, background color becomes text color */ 
+    color: var(--background-color);
+    background-color: var(--text-color); 
+    padding: 5px 15px; /* adds some padding to the black box outline */
+    border-radius: 5px; /* adds rounding */
+}
+
+/* add spacing between the icon and the text itself */ 
+nav .right a span { 
+    margin-left: 5px; 
+}
+
+/* we want to make the website responsive--adjusting to different screen sizes. increase icon size for smaller screens, make it so that text can auto change, etc. 
+
+we can do that through media queries */
+
+@media (max-width: 600px) { /* any styling will only be applied on 600 px going downwards */
+    /* navbar editing */ 
+    nav { 
+        padding: 0 20px; /* change the padding to only be 20px on the x-axis (0 on the y-axis) when the max width is under 600 px */ 
+    }
+
+    nav .right a { 
+        font-size: 22px; 
+    }
+
+    nav .right a:last-child { /* when it gets smaller, change the email icon back to the original coloring (to match with every other icon) so that we can conserve spacing */
+        color: var(--text-color); 
+        background-color: transparent; 
+        padding: 0; 
+    }
+
+    nav .right a span { 
+        display: none; /* when the screen get small, remove the text from the buttons to leave only the icons */
+    }
+}
+
+/* editing SECTION 1: HERO area */
+.hero-section { 
+    display: flex; /* flexbox display */
+    justify-self: space; 
+    align-items: center; /* have the text align in the center based on the height of its parent element */
+    padding: 0 50px; /* no padding on the y-axis, 50 px padding on the x-axis to match our nav bar */
+    margin: 50px 0; /* add spacing between the nav bar and the next section: 50 px on the y-axis, 0 on the x-axis */
+    margin-bottom: 100px; /* gap between hero and next section */
+    gap: 40px; /* a gap of about 40 px between the text and the image */
+}
+
+.hero-section .text { 
+    flex: 5; /* set different flexes for each of the subsections (text and image) */
+}
+
+.hero-section .text h2 { 
+    font-size: 45px; 
+}
+
+.hero-section .text .links { 
+    margin-top: 25px; /* this way the links are a little separated from the paragraph above it */
+}
+
+.hero-section .text .links a { 
+    display: inline-block; /* basically this prevents the icon and the link from getting separated. if you make the screen size smaller, usually the text starts wrapping and then gets disconnected from the icon. with this it no longer happens; you can't disconnect text and icon */
+    padding: 5px 10px; 
+    border: 2px solid var(--link-color); /* have a border, which is solid with a color of our previously initialized link color */
+    border-radius: 5px; 
+    margin-right: 10px; /* add a margin to the right of each box of 10 pixels */
+    /* ^ except this introduces another problem. when you try to make the website responsive (making it shrink horizontally to fit a phone screen), the buttons wrap but there's no vertical padding between them */
+    margin-bottom: 10px; /* thus we add a margin-bottom */
+    transition: 0.5s; /* when you hover over the text, it doesn't instantly change to black. it takes 0.1 seconds to change to black--a transition */
+}
+
+.hero-section .text .links a:hover { 
+    /* we want hover animations so we make a pseudo-class called hover */ 
+    color: var(--text-color); /* change the color of the text to dark grey (our text color) */
+    border: 2px solid var(--text-color); 
+}
+
+.hero-section .headshot { 
+    flex: 2; 
+    display: flex; /* flex allows something to be responsive basically kinda */
+    justify-content: right; 
+}
+/* ^ you can kinda think of this as a ratio. the text section will have 5/7 (the total of the two)'s spacing. the headshot will have 2/7 in terms of spacing */
+
+.hero-section .headshot img { /* target the image element specifically */
+    border-radius: 50%; /* changes to a circle border */
+    width: 350px; /* makes the image smaller (width) */
+    height: 350px; 
+}

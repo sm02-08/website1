@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Funnel+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="styles.css">
+    <title>Portfolio</title>
+</head>
+<body>
+    
+    <!-- a navigation bar is here with the <nav> stuff -->
+    <nav>
+        <!-- so for the nav bar, see how the template has 2 parts to it? the name on the left, github/linkedin/email on the right -->
+        <!-- thus, we create two divs: one is for the left, one is for the right -->
+        <div class = "left">
+            <a href="/">Shelley Ma</a> <!-- this would link back to our home page. btw this version of "a" links to an internal page, while a:blank links to external pages -->
+        </div>
+
+        <div class = "right">
+            <!-- a:blank links to external pages. -->
+            <a href="https://github.com/sm02-08" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-github"></i> <!-- go to fontawesome and copy the "HTML" part of the github icon -->
+                <span>GitHub</span> <!-- the "span" is -->
+            </a> <!-- the _blank makes it open in a new tab instead of the same one. this part is my github link -->
+
+            <a href="https://www.linkedin.com/in/shelleyma08/" target="_blank" rel="noopener noreferrer">
+                <i class="fa-brands fa-linkedin"></i> <!-- doing the same for LinkedIn -->
+                <span>LinkedIn</span>
+            </a>
+
+            <!-- now for the email button -->
+            <a href="mailto:shelleyma02@gmail.com" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-envelope"></i>
+                <span>Email</span>
+            </a>
+        </div>
+
+        
+    </nav>
+
+    <!-- this is where the main stuff in the website is going to go -->
+    <main>
+        <!-- section 1: hero -->
+        <!-- it's basically the intro, brief description about the person, button for skills/contact etc etc -->
+        <section class = "hero-section">
+            <!-- we want to have our title + text on one section, and the image on the other (title + text on the left, image on the right) -->
+            <div class = "text">
+                <h2>
+                    Hi, I'm Shelley!
+                </h2>
+                <p> <!-- something pretty cool is if u type "lorem50" u get 50 generated words -->
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Sunt sapiente minus dolorem dicta doloribus, ipsa doloremque ullam voluptatibus totam, culpa magni molestiae maxime atque? Facere at adipisci saepe aspernatur laboriosam, fuga error voluptate quis optio eius natus expedita placeat. Numquam atque quaerat rerum exercitationem incidunt fuga est corporis repudiandae assumenda?
+                </p>
+                <div class = "links"> <!-- there's going to be 3 buttons that are links to "skills" "testimony" and "contact" -->
+                    <a href="#skills">
+                        <i class="fa-solid fa-code"></i>
+                        <span>Skills</span> <!-- links to the "skills" section of the page-->
+                    </a>
+
+                    <a href="#testimony">
+                        <i class="fa-solid fa-person"></i>
+                        <span>Testimony</span> 
+                    </a>
+
+                    <a href="#contact">
+                        <i class="fa-solid fa-message"></i>
+                        <span>Contact</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class = "headshot">
+                <img src="images/Media-15.jpg" alt="Shelley Ma's headshot">
+
+            </div>
+
+
+        </section>
+
+        <!-- section 2: skills  -->
+        <section id = "skills"> <!-- have an "id" so that you can link it to an above part -->
+
+        </section>
+
+        <!-- section 3: testimony or whatever -->
+        <section id = "testimony">
+
+
+        </section>
+
+        <!-- section 4: contact -->
+         <section id = "contact">
+
+
+         </section>
+
+    </main>
+    
+</body>
+</html>
